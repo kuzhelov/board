@@ -1,11 +1,9 @@
 var app = require("express")();
 var http = require("http");
+var controllers = require('./controllers');
 
+controllers.init(app);
 app.set('view engine', 'vash');
-
-app.get('/', function(req, res) {
-    res.render('index', {title: 'Main page', content: 'Nothing special could be found here now'});
-});
 
 var server = http.createServer(app);
 server.listen(process.env.PORT, process.env.IP);
