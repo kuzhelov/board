@@ -1,7 +1,13 @@
 @html.extend('layout', function(model) {
     @html.block('content', function(model) {
     
-    <h3>@model.content</h3>
+        @if (model.error) {
+            <p class="error">@model.error</p>
+        }
+    
+        @model.categories.forEach( function(category) {
+            <p><a href="#">@category.name</a> - @(category.notes ? category.notes.length : 0) note(s)</p>
+        })
     
     })
 })

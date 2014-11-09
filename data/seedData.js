@@ -38,6 +38,8 @@
       author: "Shawn Wildermuth",
       color: "green"
     }]
+  }, {
+    name: "Work"
   }];
 
 })(module.exports);
