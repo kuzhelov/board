@@ -1,4 +1,4 @@
-(function(seedData) {
+do (seedData = module.exports) ->
 
   seedData.notes = [{
     name: "History",
@@ -41,5 +41,3 @@
   }, {
     name: "Work"
   }];
-
-})(module.exports);
