@@ -1,6 +1,8 @@
 do (dataServer = module.exports) ->
 
     seedData = require './seedData.js'
-
-    dataServer.getCategories = (processResult) -> 
-        processResult null, seedData.notes
+    
+    Promise = require 'promise'
+    dataServer.getCategories = () -> 
+        return new Promise (fulfill, reject) ->
+            fulfill seedData.notes

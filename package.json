@@ -12,6 +12,7 @@
   "dependencies": {
     "coffee-script": "^1.8.0",
     "express": "^4.10.1",
+    "promise": "^6.0.1",
     "vash": "^0.7.12-1"
   }
 }
