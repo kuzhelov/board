@@ -8,9 +8,13 @@ do (homeController = module.exports) ->
     renderHomePage = (req, res) ->
         
         dataServer = require '../data'
-            
+        
+        model = { title: 'The Board', categories: null }
+        
         dataServer.getCategories()
-            .then 
-                (categories) -> res.render 'index', { title: 'The Board', categories: categories },
-                (error) -> res.render 'index', { error:  error }
-            .done()
+            .then(
+                (categories) -> model.categories = categories,
+                (error) -> model.error = error
+            ).done(   
+                () -> res.render 'index', model
+            )
