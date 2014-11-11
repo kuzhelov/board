@@ -1,6 +1,6 @@
 do (dataServer = module.exports) ->
 
-    seedData = require './seedData.js'
+    seedData = require './seedData'
     
     Promise = require 'promise'
     dataServer.getCategories = () -> 
